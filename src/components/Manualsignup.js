@@ -63,9 +63,9 @@ function Manualsignup() {
     return (
         <VStack as="form" width='70%' marginX='auto' alignItems='flex-start' spacing='7'>
                     {loggedIn && <Banner user={fullname} toggle={toggle}/>}
-            <FormLabel>Fullname</FormLabel>
+            <FormLabel>Full name</FormLabel>
             <Input type='text' variant="flushed" fontSize="20px" autoComplete="none" required value={fullname} onChange={(e) => setFullname(e.target.value)}/>
-            <FormLabel>Email Address</FormLabel >
+            <FormLabel>Email address</FormLabel >
             <Input type='email' fontSize="20px" variant="flushed" autoComplete="off" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <FormLabel>Password</FormLabel >
             <InputGroup>
@@ -74,7 +74,7 @@ function Manualsignup() {
             </InputGroup>
             {password.length > 0 && <StrengthIndicator enable={enable} password={password} setEnable={setEnable}/>}
             <Checkbox onChange={()=>setChecked(!checked)}>By creating account, you agree to accept our <Box as="span" color="blue.500">Privacy Policy, Terms and services <Box as="span" color="#000">and</Box> Notifiation settings</Box></Checkbox>
-            {enable && <Button variant="solid" bgColor="tomato" px="10" w="100%" onClick={submitForm}>Sign Up</Button>}
+            {<Button variant="solid" bgColor="F16A43" _hover={{bg: "red.500", color: "white"}} px="10" w="100%" paddingY="30px" disabled={!enable} onClick={submitForm}>Create Account</Button>}
         </VStack>
     )
 }
